@@ -26,7 +26,16 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>  <?php
-                            $koneksi = new mysqli("localhost","root","","db_perpustakaan");
+                            / Koneksi ke database
+   // Detail koneksi MySQL
+   $host = "bcoefrf568cxxfc2e8wp-mysql.services.clever-cloud.com"; // Hostname
+   $database = "bcoefrf568cxxfc2e8wp";                           // Nama Database
+   $username = "upcvk5yhrocgg0ti";                               // Username
+   $password = "Rj66ewMCucI8eh5kJLow";                           // Password
+   $port = 3306;                                                 // Port (opsional)
+
+   // Membuat koneksi ke database
+   $koneksi = new mysqli($host, $username, $password, $database, $port);
                             $data = mysqli_query($koneksi,"SELECT  COUNT(a.id) as judul FROM tb_buku a ");
                                 if (mysqli_num_rows($data) > 0) {
                                     while($dat = mysqli_fetch_array($data)){
