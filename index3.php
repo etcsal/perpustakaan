@@ -5,7 +5,16 @@ mysqli_report (MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	
 	include "function.php";
 	
-	$koneksi = new mysqli("localhost","root","","db_perpustakaan");
+	/ Koneksi ke database
+   // Detail koneksi MySQL
+   $host = "bcoefrf568cxxfc2e8wp-mysql.services.clever-cloud.com"; // Hostname
+   $database = "bcoefrf568cxxfc2e8wp";                           // Nama Database
+   $username = "upcvk5yhrocgg0ti";                               // Username
+   $password = "Rj66ewMCucI8eh5kJLow";                           // Password
+   $port = 3306;                                                 // Port (opsional)
+
+   // Membuat koneksi ke database
+   $koneksi = new mysqli($host, $username, $password, $database, $port);
 	if(empty($_SESSION['ks'])){
     
     header("location:login.php");
