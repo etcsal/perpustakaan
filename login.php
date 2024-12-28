@@ -38,10 +38,25 @@
 
 
 	<?php
-	session_start();
-	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-	$koneksi = new mysqli("localhost","root","","db_perpustakaan");
-	?>	
+    session_start();
+    error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
+    // Detail koneksi MySQL
+    $host = "bcoefrf568cxxfc2e8wp-mysql.services.clever-cloud.com"; // Hostname
+    $database = "bcoefrf568cxxfc2e8wp";                           // Nama Database
+    $username = "upcvk5yhrocgg0ti";                               // Username
+    $password = "Rj66ewMCucI8eh5kJLow";                           // Password
+    $port = 3306;                                                 // Port (opsional)
+
+    // Membuat koneksi ke database
+    $koneksi = new mysqli($host, $username, $password, $database, $port);
+
+    // Periksa koneksi
+    if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
+    }
+    echo "Koneksi berhasil!";
+?>
 	<body>
 
 	<form role="form" action="" method="post">
